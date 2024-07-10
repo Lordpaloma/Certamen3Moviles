@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344802865672",
+    "project_id": "certamen3-2e378",
+    "storage_bucket": "certamen3-2e378.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344802865672:android:4ac6e5aac9d88934a9d7bd",
+        "android_client_info": {
+          "package_name": "com.usm.certamen3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbmWH242rJ3Hj46RT7Bn-ptR5k3-Eg7UE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

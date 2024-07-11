@@ -1,6 +1,8 @@
 import 'package:certamen3/services/firestore_service.dart';
+import 'package:certamen3/widgets/tile_smilingfriends.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 
 class SmilingFriends extends StatefulWidget {
@@ -36,11 +38,9 @@ class _SmilingFriendsState extends State<SmilingFriends> {
                 itemBuilder: (context, index) {
                   var trabajador = snapshot.data!.docs[index];
                   return ListBody(
-                    children: [Container(
-                      margin: EdgeInsets.all(10),
-                      color: Colors.black45,
-                      width: 100,
-                    )],
+                    children: [
+                      TilesSmiling(nombre: trabajador['nombre'], apellido:trabajador['apellido'], edad: trabajador['edad'], genero: trabajador['genero'],)
+                    ],
                   );
                   //                   leading: Icon(MdiIcons.emoticonHappy),
                   //                 title: Text('${trabajador['nombre']} ${trabajador['apellido']}'),

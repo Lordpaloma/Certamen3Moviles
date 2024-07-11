@@ -11,8 +11,10 @@ class HomePage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          
           title: Container(
             height: 40,
+            child: Image.asset('assets/images/logo.png',fit: BoxFit.contain,),
           ),
           bottom: TabBar(
             labelColor: Color.fromARGB(222, 229, 221, 221),

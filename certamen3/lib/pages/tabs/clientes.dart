@@ -1,3 +1,4 @@
+import 'package:certamen3/pages/registrar_cliente.dart';
 import 'package:certamen3/services/firestore_service.dart';
 import 'package:certamen3/widgets/tile_clienteres.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -43,7 +44,6 @@ class _ClientesState extends State<Clientes> {
                         temporada: cliente['temporada'],
                         fecha: cliente['fechaemision'],
                       ),
-                      
                     ],
                   );
                 },
@@ -52,7 +52,23 @@ class _ClientesState extends State<Clientes> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.add,
+          color: Colors.blueAccent,
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        onPressed: () {
+          MaterialPageRoute ruta = MaterialPageRoute(
+            builder: (context) => Registrarcliente(),
+          );
+          Navigator.push(context, ruta).then(
+            (value) {
+              setState(() {});
+            },
+          );
+        },
+      ),
     );
   }
-
 }

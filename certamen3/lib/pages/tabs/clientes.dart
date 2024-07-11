@@ -29,14 +29,21 @@ class _ClientesState extends State<Clientes> {
                 child: CircularProgressIndicator(),
               );
             } else {
-                            return ListView.separated(
+              return ListView.separated(
                 separatorBuilder: (context, Index) => Divider(),
                 itemCount: snapshot.data!.docs.length,
                 itemBuilder: (context, index) {
                   var cliente = snapshot.data!.docs[index];
                   return ListBody(
                     children: [
-                      TilesClientesResumen(nombre: cliente['nombre'], problema: cliente['problema'],)
+                      TilesClientesResumen(
+                        nombre: cliente['nombre'],
+                        problema: cliente['problema'],
+                        episodio: cliente['episodio'],
+                        temporada: cliente['temporada'],
+                        fecha: cliente['fechaemision'],
+                      ),
+                      
                     ],
                   );
                 },
@@ -48,38 +55,4 @@ class _ClientesState extends State<Clientes> {
     );
   }
 
-  void mostrarInfoClientes(BuildContext context, cliente) {
-    showAdaptiveDialog(
-      context: context,
-      builder: (context) {
-        return SizedBox(
-          height: 350,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Color.fromARGB(96, 29, 1, 73),
-              border:
-                  Border.all(color: Color.fromARGB(255, 29, 1, 73), width: 2),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
-              ),
-            ),
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            child: Column(children: [
-              Spacer(),
-              Container(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(115, 66, 1, 207)),
-                    child: Text('Cerrar'),
-                    onPressed: () => Navigator.pop(context),
-                  ))
-            ]),
-          ),
-        );
-      },
-    );
-  }
 }

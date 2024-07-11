@@ -23,9 +23,12 @@ class _RegistrarclienteState extends State<Registrarcliente> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Agregar Cliente',
-          style: TextStyle(color: Colors.white),
+        title: Container(
+          height: 40,
+          child: Image.asset(
+            'assets/images/logo.png',
+            fit: BoxFit.contain,
+          ),
         ),
       ),
       body: Form(
